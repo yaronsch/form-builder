@@ -1,5 +1,6 @@
 import {bootstrap} from 'angular2/platform/browser';
-import {ForBuilderApp} from './app/for-builder';
+import {FormBuilderApp} from './app/form-builder';
+import {ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy} from 'angular2/router';
+import {provide} from 'angular2/core';
 
-
-bootstrap(ForBuilderApp);
+bootstrap(FormBuilderApp, [ROUTER_PROVIDERS, provide(LocationStrategy, {useClass: HashLocationStrategy})]);
